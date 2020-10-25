@@ -15,15 +15,24 @@ class App extends Component {
 
     //call back function
     buttonClickHandler() {
-   
-   }
+        this.setState({ renderBall:true })
+// componentDidMount();
+        // this.setState({  ballPosition:{ left: "200px" } })
+    // let circle = document.getElementById("ball1");
+    // console.log(circle+"hello");
+}
     renderChoice() {
-		if(this.state.renderBall){return <div className="ball" style={this.state.ballPosition}></div>}
+		if(this.state.renderBall){return <div id="ball1" className="ball" style={this.state.ballPosition}></div>}
 		 else   return <button onClick={this.buttonClickHandler} >Click For One Ball</button>
     }
 
     //bind ArrowRight keydown event
     componentDidMount() {
+let call = document.getElementById("call");
+// addEventLisnear
+
+call.style.right="10px";
+
       
     }
 
@@ -31,6 +40,7 @@ class App extends Component {
         return (
             <div className="playground">
                 {this.renderChoice()}
+                
             </div>
         )
     }
